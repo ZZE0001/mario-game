@@ -1,1 +1,1 @@
-# mario-game
+# Simple Mario game in React.js
