@@ -24,8 +24,5 @@ body,
 #mario {
   width: 100px;
   aspect-ratio: 1;
-
-  position: absolute;
-  top: 100px;
-  left: 100px;
+  user-select: none;
 }
