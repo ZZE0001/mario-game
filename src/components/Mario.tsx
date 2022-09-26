@@ -2,6 +2,7 @@ import React from "react";
 import mario from "../assets/mario.png";
 import marioRun from "../assets/marioRun.gif";
 import marioJump from "../assets/marioJump.png";
+import { useMarioController } from "../hooks/useMarioController";
 
 interface IMarioProps {
   state?: "STILL" | "RUN" | "JUMP";
