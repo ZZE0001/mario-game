@@ -1,24 +1,18 @@
 import React from "react";
 import { Mario } from "./components/Mario";
-import { useMarioController } from "./hooks/useMarioController";
+import { Map } from "./components/Map";
+import { MarioProvider } from "./contexts/MarioContext";
 import "./App.css";
 
 const App: React.FC = () => {
-  const { marioX, marioY, direction, rightPressed, leftPressed } =
-    useMarioController();
-
   return (
-    <div className="app">
-      <Mario
-        state={rightPressed || leftPressed ? "RUN" : undefined}
-        style={{
-          position: "absolute",
-          top: marioY,
-          left: marioX,
-          transform: `scaleX(${direction === "RIGHT" ? 1 : -1})`,
-        }}
-      />
-    </div>
+    <MarioProvider>
+      <div className="app">
+        <Map>
+          <Mario />
+        </Map>
+      </div>
+    </MarioProvider>
   );
 };
 

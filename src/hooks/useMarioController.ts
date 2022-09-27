@@ -27,14 +27,14 @@ export const useMarioController = () => {
       setMarioY((prevState) =>
         prevState - speedY > BG_MAX_HEIGHT ? BG_MAX_HEIGHT : prevState - speedY
       );
-      setSpeedY((prevState) => prevState - 2);
+      setSpeedY((prevState) => prevState - 3);
     }, 30);
     return () => clearInterval(interval);
   }, [speedY, marioY, leftPressed, rightPressed]);
 
   function onKeyDown(event: KeyboardEvent) {
     if (event.keyCode === 32) {
-      setSpeedY(20);
+      setSpeedY(30);
     }
 
     if (event.keyCode === 39) {
@@ -52,5 +52,14 @@ export const useMarioController = () => {
     if (event.keyCode === 37) setLeftPressed(false);
   }
 
-  return { marioX, marioY, direction, leftPressed, rightPressed };
+  return {
+    marioX,
+    marioY,
+    direction,
+    leftPressed,
+    rightPressed,
+    setMarioX,
+    setMarioY,
+    setSpeedY,
+  };
 };
